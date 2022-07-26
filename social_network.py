@@ -24,13 +24,17 @@ if __name__ == "__main__":
             inner_menu_choice = social_network_ui.manageAccountMenu()
             #Handle inner menu here
             while True:
-                if inner_menu_choice == "5":
+                if inner_menu_choice == "7":
                     break
                 else:
                     inner_menu_choice = social_network_ui.manageAccountMenu()
 
         elif choice == "3":
-            print("Thank you for visiting. Goodbye3")
+
+            print("You have chosen to sign into an existing account. What account would you like to access?")
+
+        elif choice == "4":
+            print("Thank you for visiting. Goodbye")
             break
 
         else:
@@ -39,6 +43,50 @@ if __name__ == "__main__":
         #restart menu
         choice = social_network_ui.mainMenu()
 
+        while True:
+
+            if inner_menu_choice == "1":
+
+                print("You have chosen to edit your details. PLease answer the following questions ")
+                name = input("What is your name? ")
+                age = input("What is your age? ")
+                birthday = "When is your birthday? Please answer in MM/DD/YYYY formatting. "
+                biography = input("What would you like to put as your biography?")
+
+                print("You have updated your account info")
+
+            elif inner_menu_choice == "2":
+
+                print("You have chosen to add a friend")
+                new_friend = input("What friend would you like to add? ")
+                #friendlist.append(new_friend)
 
 
-        
+            elif inner_menu_choice == "3":
+
+                print("You have chosen to see your friend list")
+                print(friendlist)
+
+            elif inner_menu_choice == "4":
+
+                    print("You have chosen to block a user.")
+                    ai_social_network.block_person(recipient)
+
+
+            elif inner_menu_choice == "5":
+                print("You have chosen to send a message")
+
+            
+            elif inner_menu_choice == "6":
+
+                print("You have chosen to check your received messages")
+                ai_social_network.user_check_messages(user)
+
+
+            elif inner_menu_choice == "7":
+
+                break
+
+#restart menu
+
+choice = social_network_ui.mainMenu()
